@@ -77,6 +77,7 @@ def my_import(name):
     """Helper function for walking import calls when searching for classes by
     string names.
     """
+    if '' not in sys.path: sys.path.append('')
     mod = __import__(name)
     components = name.split('.')
     for comp in components[1:]:
